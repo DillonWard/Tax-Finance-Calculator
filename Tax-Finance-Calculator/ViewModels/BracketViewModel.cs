@@ -8,6 +8,10 @@ namespace Tax_Finance_Calculator.ViewModel
 {
     class BracketViewModel
     {
+        // Reads in the user input and assigns it to the BracketModel
 
+        // Deduct the tax from gross income
+
+        // Return income after tax
     }
 }
