@@ -25,6 +25,48 @@ namespace Tax_Finance_Calculator
         public MainPage()
         {
             this.InitializeComponent();
+
+            init();
+
+
+        }
+
+        public void init()
+        {
+            welcomeBlock.Text = "Welcome to \n Tax Calculator!";
+            welcomeBlock.FontSize = 20;
+            welcomeBlock.TextAlignment = TextAlignment.Center;
+
+            gettingStarted.Text = "Select a Country to begin.";
+            gettingStarted.FontSize = 15;
+            gettingStarted.TextAlignment = TextAlignment.Center;
+
+            chooseCountry.PlaceholderText = "Country";
+            chooseCountry.HorizontalAlignment = HorizontalAlignment.Left;
+
+            confirmCountry.Content = "Confirm";
+
+
+        }
+
+        private void welcomeBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void gettingStarter_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void confirmCountry_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
