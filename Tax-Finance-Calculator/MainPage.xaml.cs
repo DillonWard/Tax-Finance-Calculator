@@ -36,17 +36,19 @@ namespace Tax_Finance_Calculator
             welcomeBlock.Text = "Welcome to \n Tax Calculator!";
             welcomeBlock.FontSize = 20;
             welcomeBlock.TextAlignment = TextAlignment.Center;
+            welcomeBlock.HorizontalAlignment = HorizontalAlignment.Center;
 
             gettingStarted.Text = "Select a Country to begin.";
             gettingStarted.FontSize = 15;
             gettingStarted.TextAlignment = TextAlignment.Center;
+            gettingStarted.HorizontalAlignment = HorizontalAlignment.Center;
 
-            chooseCountry.PlaceholderText = "Country";
-            chooseCountry.HorizontalAlignment = HorizontalAlignment.Left;
+            chooseCountry.PlaceholderText = "Select Country";
 
-            confirmCountry.Content = "Confirm";
+            confirmButton.Content = "Confirm";
 
-
+            dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
+            dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
         }
 
         private void welcomeBlock_SelectionChanged(object sender, RoutedEventArgs e)
@@ -65,6 +67,11 @@ namespace Tax_Finance_Calculator
         }
 
         private void confirmCountry_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
