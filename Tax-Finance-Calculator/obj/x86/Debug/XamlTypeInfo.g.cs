@@ -132,17 +132,19 @@ namespace Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[5];
             _typeNameTable[0] = "Tax_Finance_Calculator.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Tax_Finance_Calculator.BracketView";
+            _typeNameTable[3] = "Tax_Finance_Calculator.View.EnterCredentials";
+            _typeNameTable[4] = "Tax_Finance_Calculator.View.NoCredentialsNeeded";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::Tax_Finance_Calculator.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Tax_Finance_Calculator.BracketView);
+            _typeTable[3] = typeof(global::Tax_Finance_Calculator.View.EnterCredentials);
+            _typeTable[4] = typeof(global::Tax_Finance_Calculator.View.NoCredentialsNeeded);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -178,7 +180,8 @@ namespace Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::Tax_Finance_Calculator.MainPage(); }
-        private object Activate_3_BracketView() { return new global::Tax_Finance_Calculator.BracketView(); }
+        private object Activate_3_EnterCredentials() { return new global::Tax_Finance_Calculator.View.EnterCredentials(); }
+        private object Activate_4_NoCredentialsNeeded() { return new global::Tax_Finance_Calculator.View.NoCredentialsNeeded(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -205,9 +208,16 @@ namespace Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo
                 xamlType = new global::Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Tax_Finance_Calculator.BracketView
+            case 3:   //  Tax_Finance_Calculator.View.EnterCredentials
                 userType = new global::Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_BracketView;
+                userType.Activator = Activate_3_EnterCredentials;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Tax_Finance_Calculator.View.NoCredentialsNeeded
+                userType = new global::Tax_Finance_Calculator.Tax_Finance_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_NoCredentialsNeeded;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

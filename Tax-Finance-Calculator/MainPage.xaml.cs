@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Net.Http;
-
+using Tax_Finance_Calculator.View;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Tax_Finance_Calculator
@@ -50,12 +50,13 @@ namespace Tax_Finance_Calculator
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
 
-            data();
+            //data();
 
         }
 
         private static readonly HttpClient client = new HttpClient();
 
+        /*
         async void data()
         {
             //Create an HTTP client object
@@ -98,7 +99,7 @@ namespace Tax_Finance_Calculator
 
         }
 
-
+    */
         private void welcomeBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
@@ -121,7 +122,7 @@ namespace Tax_Finance_Calculator
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(EnterCredentials));
         }
     }
 }

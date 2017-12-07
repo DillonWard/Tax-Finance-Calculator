@@ -1,3 +1,4 @@
 App.xbf
 MainPage.xbf
-View\BracketView.xbf
+View\EnterCredentials.xbf
+View\NoCredentialsNeeded.xbf

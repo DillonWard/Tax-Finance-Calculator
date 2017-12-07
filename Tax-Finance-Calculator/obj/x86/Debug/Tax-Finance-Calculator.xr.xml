@@ -48,6 +48,20 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Tax_Finance_Calculator.MainPage" />
-    <RootType FullName="Tax_Finance_Calculator.BracketView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Children" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+    </RootType>
+    <RootType FullName="Tax_Finance_Calculator.View.EnterCredentials" />
+    <RootType FullName="Tax_Finance_Calculator.View.NoCredentialsNeeded" />
   </Roots.RootTypes>
 </Roots>

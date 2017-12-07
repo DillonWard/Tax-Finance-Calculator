@@ -104,6 +104,12 @@
     <Compile Include="Model\RateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BracketViewModel.cs" />
+    <Compile Include="View\EnterCredentials.xaml.cs">
+      <DependentUpon>EnterCredentials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NoCredentialsNeeded.xaml.cs">
+      <DependentUpon>NoCredentialsNeeded.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -130,7 +136,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\BracketView.xaml">
+    <Page Include="View\EnterCredentials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NoCredentialsNeeded.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
