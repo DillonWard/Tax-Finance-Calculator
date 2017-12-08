@@ -25,6 +25,16 @@ namespace Tax_Finance_Calculator.View
         public NoCredentialsNeeded()
         {
             this.InitializeComponent();
+            init();
         }
+
+        private void init()
+        {
+            salary.HorizontalAlignment = HorizontalAlignment.Center;
+            salary.VerticalAlignment = VerticalAlignment.Center;
+            salary.PlaceholderText = "Enter salary";
+            salary.IsReadOnly = true;
+        }
+
     }
 }

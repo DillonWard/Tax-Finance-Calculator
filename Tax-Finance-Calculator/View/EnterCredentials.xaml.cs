@@ -25,13 +25,41 @@ namespace Tax_Finance_Calculator.View
         public EnterCredentials()
         {
             this.InitializeComponent();
+            init();
         }
 
-        /*
-        private void BGRadioButton_Checked(object sender, RoutedEventArgs e)
+
+        private void init()
         {
-           // RadioButton rb = sender as RadioButton;
+            salary.HorizontalAlignment = HorizontalAlignment.Center;
+            salary.VerticalAlignment = VerticalAlignment.Center;
+            salary.PlaceholderText = "Enter salary";
+            salary.IsReadOnly = true;
         }
-        */
+
+        private void Single_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            salary.IsReadOnly = false;
+
+        }
+
+        private void SP_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            salary.IsReadOnly = false;
+
+        }
+        private void Married_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            salary.IsReadOnly = false;
+
+        }
+
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,8 +31,9 @@ namespace Tax_Finance_Calculator
 
         }
 
-        public void init()
+        private void init()
         {
+            
             welcomeBlock.Text = "Welcome to \n Tax Calculator!";
             welcomeBlock.FontSize = 20;
             welcomeBlock.TextAlignment = TextAlignment.Center;
@@ -46,6 +47,7 @@ namespace Tax_Finance_Calculator
             chooseCountry.PlaceholderText = "Select Country";
 
             confirmButton.Content = "Confirm";
+            //confirmButton.IsEnabled = false;
 
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
@@ -54,9 +56,11 @@ namespace Tax_Finance_Calculator
 
         }
 
-        private static readonly HttpClient client = new HttpClient();
 
         /*
+           
+        private static readonly HttpClient client = new HttpClient();
+
         async void data()
         {
             //Create an HTTP client object
@@ -100,25 +104,13 @@ namespace Tax_Finance_Calculator
         }
 
     */
-        private void welcomeBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void gettingStarter_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            confirmButton.IsEnabled = true;
 
         }
 
-        private void confirmCountry_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
