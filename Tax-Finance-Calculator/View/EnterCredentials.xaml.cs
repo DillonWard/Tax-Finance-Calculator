@@ -35,6 +35,20 @@ namespace Tax_Finance_Calculator.View
             salary.VerticalAlignment = VerticalAlignment.Center;
             salary.PlaceholderText = "Enter salary";
             salary.IsReadOnly = true;
+
+            afterTaxReturn.Text = "After Tax:";
+            afterTaxReturn.HorizontalAlignment = HorizontalAlignment.Left;
+
+            taxedIncome.Text = "Taxed Income:";
+            taxedIncome.HorizontalAlignment = HorizontalAlignment.Left;
+
+            suggestedSavings.Text = "Suggested Savings (10%):";
+            suggestedRent.HorizontalAlignment = HorizontalAlignment.Left;
+
+            suggestedRent.Text = "Suggested Rent (30%):";
+            suggestedRent.HorizontalAlignment = HorizontalAlignment.Left;
+
+            returns.HorizontalAlignment = HorizontalAlignment.Center;
         }
 
         private void Single_Checked(object sender, RoutedEventArgs e)
@@ -50,16 +64,11 @@ namespace Tax_Finance_Calculator.View
             salary.IsReadOnly = false;
 
         }
+
         private void Married_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;
             salary.IsReadOnly = false;
-
-        }
-
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

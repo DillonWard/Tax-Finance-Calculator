@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Net.Http;
 using Tax_Finance_Calculator.View;
+using Microsoft.WindowsAzure.MobileServices;
+using Tax_Finance_Calculator.Model;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Tax_Finance_Calculator
@@ -23,17 +25,19 @@ namespace Tax_Finance_Calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+
         public MainPage()
         {
             this.InitializeComponent();
-             
             init();
-
         }
+
+
 
         private void init()
         {
-            
+
             welcomeBlock.Text = "Welcome to \n Tax Calculator!";
             welcomeBlock.FontSize = 20;
             welcomeBlock.TextAlignment = TextAlignment.Center;
@@ -52,58 +56,7 @@ namespace Tax_Finance_Calculator
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
 
-            //data();
-
         }
-
-
-        /*
-           
-        private static readonly HttpClient client = new HttpClient();
-
-        async void data()
-        {
-            //Create an HTTP client object
-            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
-
-            //Add a user-agent header to the GET request. 
-            var headers = httpClient.DefaultRequestHeaders;
-
-            //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
-            //especially if the header value is coming from user input.
-            string header = "ie";
-            if (!headers.UserAgent.TryParseAdd(header))
-            {
-                throw new Exception("Invalid header value: " + header);
-            }
-
-            header = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
-            if (!headers.UserAgent.TryParseAdd(header))
-            {
-                throw new Exception("Invalid header value: " + header);
-            }
-
-            Uri requestUri = new Uri("https://management.core.windows.net:8443/9be76ffa-2149-4d80-a0bd-822e172fe814/services/sqlservers/servers/tfc.database.windows.net/databases/Tax-Finance-Calculator-DB");
-
-            //Send the GET request asynchronously and retrieve the response as a string.
-            Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
-            string httpResponseBody = "";
-
-            try
-            {
-                //Send the GET request
-                httpResponse = await httpClient.GetAsync(requestUri);
-                httpResponse.EnsureSuccessStatusCode();
-                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-            }
-            catch (Exception ex)
-            {
-                httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
-            }
-
-        }
-
-    */
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

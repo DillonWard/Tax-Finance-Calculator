@@ -10,8 +10,6 @@ namespace Tax_Finance_Calculator.Model
     {
         // Income/Earnings after tax
         public double yearlyIncome { get; set; } // How much money is made yearly
-        public double monthlyIncome { get; set; } // How much money is made monthly
-        public double weeklyIncome { get; set; } // How much money is made weekly
         public double taxedIncome { get; set; } // How much of your income was taxed 
 
         public double savingsAdvisor { get; set; } // How much you should save (10%)
@@ -19,11 +17,9 @@ namespace Tax_Finance_Calculator.Model
 
 
         // Constructor
-        public IncomeModel(double yearlyIncome, double monthlyIncome, double weeklyIncome, double taxedIncome, double savingsAdvisor, double rentAdvisor)
+        public IncomeModel(double yearlyIncome, double taxedIncome, double savingsAdvisor, double rentAdvisor)
         {
             this.yearlyIncome = yearlyIncome;
-            this.monthlyIncome = monthlyIncome;
-            this.weeklyIncome = weeklyIncome;
             this.taxedIncome = taxedIncome;
             this.savingsAdvisor = savingsAdvisor;
             this.rentAdvisor = rentAdvisor;
