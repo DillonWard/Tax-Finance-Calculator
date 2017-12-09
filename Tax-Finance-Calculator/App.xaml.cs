@@ -23,7 +23,7 @@ namespace Tax_Finance_Calculator
     /// </summary>
     sealed partial class App : Application
     {
-        public static MobileServiceClient MobileService = new MobileServiceClient("http://tfc-ma.azurewebsites.net");
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://tfc-ma.azurewebsites.net");
 
 
         /// <summary>

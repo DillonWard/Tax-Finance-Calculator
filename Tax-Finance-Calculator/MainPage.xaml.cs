@@ -26,6 +26,8 @@ namespace Tax_Finance_Calculator
     public sealed partial class MainPage : Page
     {
         private IMobileServiceTable<TaxRates> myTable = App.MobileService.GetTable<TaxRates>();
+        private static MobileServiceCollection<TaxRates, TaxRates> taxRates;
+        private IMobileServiceTable<TaxRates> taxRatesTable = App.MobileService.GetTable<TaxRates>();
 
         public MainPage()
         {
@@ -56,7 +58,28 @@ namespace Tax_Finance_Calculator
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
 
+            push();
+
         }
+
+        private async void push()
+        {
+            TaxRates item = new TaxRates
+            {
+
+                countryName = "Ireland",
+                first_rate = 20,
+                second_rate = 20,
+                third_rate = 20,
+                fourth_rate = 40,
+
+                first_cutoff = 33800,
+                second_cutoff = 37800,
+                third_cutoff = 42800
+            };
+
+        await taxRatesTable.InsertAsync(item);
+    }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -70,4 +93,7 @@ namespace Tax_Finance_Calculator
             this.Frame.Navigate(typeof(EnterCredentials));
         }
     }
+
+
+
 }
