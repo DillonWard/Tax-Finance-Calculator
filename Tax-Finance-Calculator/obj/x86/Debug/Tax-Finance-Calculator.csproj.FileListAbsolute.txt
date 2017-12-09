@@ -584,7 +584,6 @@ C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x8
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\View\NoCredentialsNeeded.xaml
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\View\NoCredentialsNeeded.xbf
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\View\NoCredentialsNeeded.xbf
-C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\Tax-Finance-Calculator.csprojResolveAssemblyReference.cache
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Microsoft.Azure.Mobile.Client.dll
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Newtonsoft.Json.dll
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\clrjit.dll
@@ -614,3 +613,14 @@ C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x8
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\Microsoft.Azure.Mobile.Client\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\Tax-Finance-Calculator.csproj.GenerateResource.Cache
 C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\Microsoft.Azure.Mobile.Client.pri.xml
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Microsoft.Azure.Mobile.Client.SQLiteStore.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\System.Console.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\SQLitePCLRaw.core.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\e_sqlite3.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\FxResources.System.Console.SR.resw
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
+C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\obj\x86\Debug\Microsoft.Azure.Mobile.Client.SQLiteStore\en-US\Microsoft.WindowsAzure.MobileServices.SQLiteStore.Properties.Resources.resw

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Net.Http;
 using Tax_Finance_Calculator.View;
 using Microsoft.WindowsAzure.MobileServices;
-using Tax_Finance_Calculator.Model;
+using Tax_Finance_Calculator.Data_Services;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Tax_Finance_Calculator
@@ -25,7 +25,7 @@ namespace Tax_Finance_Calculator
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
+        private IMobileServiceTable<TaxRates> myTable = App.MobileService.GetTable<TaxRates>();
 
         public MainPage()
         {
