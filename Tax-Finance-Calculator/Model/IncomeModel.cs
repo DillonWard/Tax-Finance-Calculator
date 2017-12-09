@@ -13,16 +13,7 @@ namespace Tax_Finance_Calculator.Model
         public double taxedIncome { get; set; } // How much of your income was taxed 
 
         public double savingsAdvisor { get; set; } // How much you should save (10%)
-        public double rentAdvisor { get; set; } // How much of your income should be spent on rent and utilities (35%)
+        public double rentAdvisor { get; set; } // How much of your income should be spent on rent and utilities (30%)
 
-
-        // Constructor
-        public IncomeModel(double yearlyIncome, double taxedIncome, double savingsAdvisor, double rentAdvisor)
-        {
-            this.yearlyIncome = yearlyIncome;
-            this.taxedIncome = taxedIncome;
-            this.savingsAdvisor = savingsAdvisor;
-            this.rentAdvisor = rentAdvisor;
-        }
     }
 }

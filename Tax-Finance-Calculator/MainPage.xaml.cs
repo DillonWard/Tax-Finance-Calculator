@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Net.Http;
 using Tax_Finance_Calculator.View;
 using Microsoft.WindowsAzure.MobileServices;
-using Tax_Finance_Calculator.Data_Services;
+using Windows.UI.Popups;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Tax_Finance_Calculator
@@ -51,6 +51,7 @@ namespace Tax_Finance_Calculator
             gettingStarted.HorizontalAlignment = HorizontalAlignment.Center;
 
             chooseCountry.PlaceholderText = "Select Country";
+            //chooseCountry.ItemsSource = taxRates.countryName;
 
             confirmButton.Content = "Confirm";
             //confirmButton.IsEnabled = false;
@@ -64,22 +65,35 @@ namespace Tax_Finance_Calculator
 
         private async void push()
         {
+
+         
+
+            taxRates = await myTable.Take(5).ToCollectionAsync();
+
+
+
+            // new MessageDialog(taxRates.LastOrDefault().countryName + "\n" + taxRates.LastOrDefault().first_rate + "\n" + taxRates.LastOrDefault().first_cutoff).ShowAsync();
+
+            /*
             TaxRates item = new TaxRates
             {
+                countryName = "The Netherland",
 
-                countryName = "Ireland",
-                first_rate = 20,
-                second_rate = 20,
-                third_rate = 20,
-                fourth_rate = 40,
+                first_rate = 36.55,
+                second_rate = 40.80,
+                third_rate = 40.80,
+                fourth_rate = 52,
 
-                first_cutoff = 33800,
-                second_cutoff = 37800,
-                third_cutoff = 42800
+                first_cutoff = 19982,
+                second_cutoff = 33791,
+                third_cutoff = 67072,
+                fourth_cutoff= 0
             };
 
-        await taxRatesTable.InsertAsync(item);
-    }
+            await App.MobileService.GetTable<TaxRates>().InsertAsync(item);
+            */
+
+        }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

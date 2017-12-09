@@ -95,15 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data Services\Services.cs" />
-    <Compile Include="Data Services\TaxRates.cs" />
+    <Compile Include="Model\TaxRateModel.cs" />
+    <Compile Include="Model\TaxRates.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\IncomeModel.cs" />
-    <Compile Include="Model\RateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\BracketViewModel.cs" />
+    <Compile Include="ViewModel\TaxRateViewModel.cs" />
     <Compile Include="View\EnterCredentials.xaml.cs">
       <DependentUpon>EnterCredentials.xaml</DependentUpon>
     </Compile>
