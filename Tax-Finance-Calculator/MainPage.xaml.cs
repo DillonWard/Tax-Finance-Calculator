@@ -16,6 +16,8 @@ using System.Net.Http;
 using Tax_Finance_Calculator.View;
 using Microsoft.WindowsAzure.MobileServices;
 using Windows.UI.Popups;
+using Tax_Finance_Calculator.ViewModel;
+using Tax_Finance_Calculator.Model;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Tax_Finance_Calculator
@@ -29,16 +31,21 @@ namespace Tax_Finance_Calculator
         private static MobileServiceCollection<TaxRates, TaxRates> taxRates;
         private IMobileServiceTable<TaxRates> taxRatesTable = App.MobileService.GetTable<TaxRates>();
 
+        public List<string> cNames = new List<string>();
+        public List<double> cutOffs = new List<double>();
+        public List<double> percents = new List<double>();
+
+        DataModel dm = new DataModel();
+
         public MainPage()
         {
             this.InitializeComponent();
             init();
         }
 
-
-
         private void init()
         {
+            pull();
 
             welcomeBlock.Text = "Welcome to \n Tax Calculator!";
             welcomeBlock.FontSize = 20;
@@ -50,55 +57,54 @@ namespace Tax_Finance_Calculator
             gettingStarted.TextAlignment = TextAlignment.Center;
             gettingStarted.HorizontalAlignment = HorizontalAlignment.Center;
 
-            chooseCountry.PlaceholderText = "Select Country";
-            //chooseCountry.ItemsSource = taxRates.countryName;
 
             confirmButton.Content = "Confirm";
-            //confirmButton.IsEnabled = false;
+            confirmButton.IsEnabled = false;
 
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
 
-            push();
-
         }
 
-        private async void push()
+        public async void pull()
         {
-
-         
-
             taxRates = await myTable.Take(5).ToCollectionAsync();
-
-
-
-            // new MessageDialog(taxRates.LastOrDefault().countryName + "\n" + taxRates.LastOrDefault().first_rate + "\n" + taxRates.LastOrDefault().first_cutoff).ShowAsync();
-
-            /*
-            TaxRates item = new TaxRates
-            {
-                countryName = "The Netherland",
-
-                first_rate = 36.55,
-                second_rate = 40.80,
-                third_rate = 40.80,
-                fourth_rate = 52,
-
-                first_cutoff = 19982,
-                second_cutoff = 33791,
-                third_cutoff = 67072,
-                fourth_cutoff= 0
-            };
-
-            await App.MobileService.GetTable<TaxRates>().InsertAsync(item);
-            */
-
+            assign();
         }
 
+        public void assign()
+        {
+            cNames.Add(taxRates.FirstOrDefault().countryName);
+            cNames.Add(taxRates.LastOrDefault().countryName);
+            
+            cutOffs.Add(taxRates.First().first_cutoff);
+            cutOffs.Add(taxRates.First().second_cutoff);
+            cutOffs.Add(taxRates.First().third_cutoff);
+            cutOffs.Add(taxRates.First().fourth_cutoff);
+
+            cutOffs.Add(taxRates.Last().first_cutoff);
+            cutOffs.Add(taxRates.Last().second_cutoff);
+            cutOffs.Add(taxRates.Last().third_cutoff);
+            cutOffs.Add(taxRates.Last().fourth_cutoff);
+
+            percents.Add(taxRates.First().first_rate);
+            percents.Add(taxRates.First().second_cutoff);
+            percents.Add(taxRates.First().third_cutoff);
+            percents.Add(taxRates.First().fourth_cutoff);
+
+            percents.Add(taxRates.Last().first_rate);
+            percents.Add(taxRates.Last().second_cutoff);
+            percents.Add(taxRates.Last().third_cutoff);
+            percents.Add(taxRates.Last().fourth_cutoff);
+            chooseCountry.PlaceholderText = "Select Country";
+
+            chooseCountry.ItemsSource = cNames;
+
+
+        }
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             confirmButton.IsEnabled = true;
-
         }
 
 
