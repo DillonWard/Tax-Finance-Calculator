@@ -7,8 +7,9 @@ using Newtonsoft.Json;
 
 namespace Tax_Finance_Calculator
 {
-    class TaxRates
+    public class TaxRates
     {
+
         public string Id { get; set; }
 
         public string countryName { get; set; }
@@ -22,7 +23,6 @@ namespace Tax_Finance_Calculator
         public double second_cutoff { get; set; }
         public double third_cutoff { get; set; }
         public double fourth_cutoff { get; set; }
-
 
     }
 }

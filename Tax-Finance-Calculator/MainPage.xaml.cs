@@ -31,15 +31,13 @@ namespace Tax_Finance_Calculator
         private static MobileServiceCollection<TaxRates, TaxRates> taxRates;
         private IMobileServiceTable<TaxRates> taxRatesTable = App.MobileService.GetTable<TaxRates>();
 
-        public List<string> cNames = new List<string>();
-        public List<double> cutOffs = new List<double>();
-        public List<double> percents = new List<double>();
-
-        DataModel dm = new DataModel();
+        List<DataModel> dms;
 
         public MainPage()
         {
             this.InitializeComponent();
+            dms = new List<DataModel>();
+
             init();
         }
 
@@ -64,6 +62,10 @@ namespace Tax_Finance_Calculator
             dropdownAndButton.VerticalAlignment = VerticalAlignment.Center;
             dropdownAndButton.HorizontalAlignment = HorizontalAlignment.Center;
 
+            chooseCountry.PlaceholderText = "Select Country";
+            chooseCountry.ItemsSource = dms;
+            chooseCountry.DisplayMemberPath = "countryName";
+
         }
 
         public async void pull()
@@ -74,34 +76,38 @@ namespace Tax_Finance_Calculator
 
         public void assign()
         {
-            cNames.Add(taxRates.FirstOrDefault().countryName);
-            cNames.Add(taxRates.LastOrDefault().countryName);
-            
-            cutOffs.Add(taxRates.First().first_cutoff);
-            cutOffs.Add(taxRates.First().second_cutoff);
-            cutOffs.Add(taxRates.First().third_cutoff);
-            cutOffs.Add(taxRates.First().fourth_cutoff);
 
-            cutOffs.Add(taxRates.Last().first_cutoff);
-            cutOffs.Add(taxRates.Last().second_cutoff);
-            cutOffs.Add(taxRates.Last().third_cutoff);
-            cutOffs.Add(taxRates.Last().fourth_cutoff);
+            List<Double> tempR= new List<Double>();
+            List<Double> tempP = new List<Double>();
 
-            percents.Add(taxRates.First().first_rate);
-            percents.Add(taxRates.First().second_cutoff);
-            percents.Add(taxRates.First().third_cutoff);
-            percents.Add(taxRates.First().fourth_cutoff);
+            tempR.Add(taxRates.First().first_cutoff);
+            tempR.Add(taxRates.First().second_cutoff);
+            tempR.Add(taxRates.First().third_cutoff);
+            tempR.Add(taxRates.First().fourth_cutoff);
 
-            percents.Add(taxRates.Last().first_rate);
-            percents.Add(taxRates.Last().second_cutoff);
-            percents.Add(taxRates.Last().third_cutoff);
-            percents.Add(taxRates.Last().fourth_cutoff);
-            chooseCountry.PlaceholderText = "Select Country";
+            tempP.Add(taxRates.First().first_rate);
+            tempP.Add(taxRates.First().second_cutoff);
+            tempP.Add(taxRates.First().first_cutoff);
+            tempP.Add(taxRates.First().third_cutoff);
 
-            chooseCountry.ItemsSource = cNames;
+            var first = new DataModel(taxRates.First().countryName.ToString(), tempR.ToArray(), tempP.ToArray());
+            dms.Add(first);
 
+            tempR.Add(taxRates.Last().first_cutoff);
+            tempR.Add(taxRates.Last().second_cutoff);
+            tempR.Add(taxRates.Last().third_cutoff);
+            tempR.Add(taxRates.Last().fourth_cutoff);
+
+            tempP.Add(taxRates.Last().first_rate);
+            tempP.Add(taxRates.Last().second_cutoff);
+            tempP.Add(taxRates.Last().first_cutoff);
+            tempP.Add(taxRates.Last().third_cutoff);
+
+            var last = new DataModel(taxRates.Last().countryName.ToString(), tempR.ToArray(), tempP.ToArray());
+            dms.Add(last);
 
         }
+
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             confirmButton.IsEnabled = true;

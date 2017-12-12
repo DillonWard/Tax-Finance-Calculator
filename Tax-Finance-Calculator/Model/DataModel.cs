@@ -8,5 +8,17 @@ namespace Tax_Finance_Calculator.Model
 {
     class DataModel
     {
+        public DataModel(string countryName, double[] taxRates, double[] percentages)
+        {
+            this.countryName = countryName;
+            this.taxRates = taxRates;
+            this.percentages = percentages;
+        }
+
+        public string countryName { get; set; }
+        public double[] taxRates { get; set; }
+        public double[] percentages { get; set; }
+
+
     }
 }

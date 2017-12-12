@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-10T20:07:36.539</Modified>
+      <Modified>2017-12-12T14:27:42.626</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Tax-Finance-Calculator.exe">
       <PackagePath>entrypoint\Tax-Finance-Calculator.exe</PackagePath>
-      <Modified>2017-12-10T20:07:35.627</Modified>
+      <Modified>2017-12-12T14:27:42.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dillo\.nuget\packages\Microsoft.Azure.Mobile.Client\4.0.2\lib\uap10.0\Microsoft.Azure.Mobile.Client.dll">
       <PackagePath>Microsoft.Azure.Mobile.Client.dll</PackagePath>
@@ -572,7 +572,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Tax-Finance-Calculator.xr.xml">
       <PackagePath>Tax-Finance-Calculator.xr.xml</PackagePath>
-      <Modified>2017-12-10T20:07:35.392</Modified>
+      <Modified>2017-12-11T18:34:48.330</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -581,11 +581,11 @@
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-10T20:07:36.071</Modified>
+      <Modified>2017-12-11T18:34:48.880</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Core\Tax-Finance-Calculator.exe">
       <PackagePath>Tax-Finance-Calculator.exe</PackagePath>
-      <Modified>2017-12-10T20:07:36.534</Modified>
+      <Modified>2017-12-12T14:27:42.623</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

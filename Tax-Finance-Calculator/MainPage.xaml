@@ -13,7 +13,7 @@
         <TextBlock x:Name="gettingStarted" Text="temp"  TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.548,6.7" Margin="40,249,0,0" Height="80" Width="300"/>
 
         <Grid Margin="0,281,0,311" Name="dropdownAndButton">
-            <ComboBox x:Name="chooseCountry" ItemsSource="{Binding cName}"   DisplayMemberPath="cName"  VerticalAlignment="Top" Width="177" SelectionChanged="comboBox_SelectionChanged" RenderTransformOrigin="0.5,0.5" Height="40" Margin="41,-2,0,0"/>
+            <ComboBox x:Name="chooseCountry" VerticalAlignment="Top" Width="177" SelectionChanged="comboBox_SelectionChanged" RenderTransformOrigin="0.5,0.5" Height="40" Margin="41,-2,0,0"/>
             <Button x:Name="confirmButton" Content="Button" Height="40" Width="127" Click="confirmButton_Click" Margin="223,-2,0,10"/>
         </Grid>
 
