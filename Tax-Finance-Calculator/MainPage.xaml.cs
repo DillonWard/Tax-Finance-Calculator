@@ -66,6 +66,9 @@ namespace Tax_Finance_Calculator
             chooseCountry.ItemsSource = dms;
             chooseCountry.DisplayMemberPath = "countryName";
 
+
+            //MessageBox.Show();
+
         }
 
         public async void pull()
@@ -110,13 +113,27 @@ namespace Tax_Finance_Calculator
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             confirmButton.IsEnabled = true;
         }
 
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(EnterCredentials));
+
+            var selected = (DataModel)chooseCountry.SelectedItem;
+
+            //new MessageDialog(selected.countryName.ToString()).ShowAsync();
+
+            if(selected.countryName.ToString() == "Ireland")
+            {
+                this.Frame.Navigate(typeof(EnterCredentials));
+            }
+            else if(selected.countryName.ToString() == "Ireland")
+            {
+                this.Frame.Navigate(typeof(NoCredentialsNeeded));
+            }
+
         }
     }
 
