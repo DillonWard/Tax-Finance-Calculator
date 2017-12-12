@@ -12,6 +12,23 @@ namespace Tax_Finance_Calculator.ViewModel
     {
 
         // Deduct the tax from gross income
+        double calculatedTax;
+        DataModel dm = new DataModel();
+
+        public void determineRate(double salary)
+        {
+            
+
+        }
+
+        public void deductTax(double salary, double taxRate)
+        {
+            calculatedTax = (salary / 100) * taxRate;
+            calculatedTax = salary - calculatedTax;
+
+            //return calculatedTax;
+
+        }
 
         // Return income after tax
 

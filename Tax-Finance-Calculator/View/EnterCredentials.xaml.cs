@@ -34,12 +34,14 @@ namespace Tax_Finance_Calculator.View
             salary.HorizontalAlignment = HorizontalAlignment.Center;
             salary.VerticalAlignment = VerticalAlignment.Center;
             salary.PlaceholderText = "Enter salary";
+            var subSalary = salary.Text;
+
             salary.IsReadOnly = true;
 
             afterTaxReturn.Text = "After Tax:";
             afterTaxReturn.HorizontalAlignment = HorizontalAlignment.Left;
 
-            taxedIncome.Text = "Taxed Income:";
+            taxedIncome.Text = "Taxed:";
             taxedIncome.HorizontalAlignment = HorizontalAlignment.Left;
 
             suggestedSavings.Text = "Suggested Savings (10%):";
@@ -49,6 +51,19 @@ namespace Tax_Finance_Calculator.View
             suggestedRent.HorizontalAlignment = HorizontalAlignment.Left;
 
             returns.HorizontalAlignment = HorizontalAlignment.Center;
+
+            afterTaxResult.HorizontalAlignment = HorizontalAlignment.Right;
+            afterTaxResult.Text = "1";
+
+            taxedIncomeResult.HorizontalAlignment = HorizontalAlignment.Right;
+
+            suggestedSavingsResult.HorizontalAlignment = HorizontalAlignment.Right;
+
+            suggestedRentResult.HorizontalAlignment = HorizontalAlignment.Right;
+
+            afterTaxResult.HorizontalAlignment = HorizontalAlignment.Right;
+
+
         }
 
         private void Single_Checked(object sender, RoutedEventArgs e)

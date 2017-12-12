@@ -118,18 +118,22 @@ namespace Tax_Finance_Calculator
         }
 
 
-        private void confirmButton_Click(object sender, RoutedEventArgs e)
+        public void confirmButton_Click(object sender, RoutedEventArgs e)
         {
 
             var selected = (DataModel)chooseCountry.SelectedItem;
 
             //new MessageDialog(selected.countryName.ToString()).ShowAsync();
-
             if(selected.countryName.ToString() == "Ireland")
             {
                 this.Frame.Navigate(typeof(EnterCredentials));
+                /*
+                foreach (var txt in dms)
+                {
+
+                }*/
             }
-            else if(selected.countryName.ToString() == "Ireland")
+            else if(selected.countryName.ToString() == "The Netherland")
             {
                 this.Frame.Navigate(typeof(NoCredentialsNeeded));
             }

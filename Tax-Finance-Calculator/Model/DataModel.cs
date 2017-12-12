@@ -15,6 +15,14 @@ namespace Tax_Finance_Calculator.Model
             this.percentages = percentages;
         }
 
+        public DataModel()
+        {
+            countryName = countryName;
+            taxRates = taxRates;
+            percentages = percentages;
+
+
+        }
         public string countryName { get; set; }
         public double[] taxRates { get; set; }
         public double[] percentages { get; set; }
