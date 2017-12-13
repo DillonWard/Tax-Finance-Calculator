@@ -89,9 +89,9 @@ namespace Tax_Finance_Calculator
             tempR.Add(taxRates.First().fourth_cutoff);
 
             tempP.Add(taxRates.First().first_rate);
-            tempP.Add(taxRates.First().second_cutoff);
-            tempP.Add(taxRates.First().first_cutoff);
-            tempP.Add(taxRates.First().third_cutoff);
+            tempP.Add(taxRates.First().second_rate);
+            tempP.Add(taxRates.First().third_rate);
+            tempP.Add(taxRates.First().fourth_rate);
 
             var first = new DataModel(taxRates.First().countryName.ToString(), tempR.ToArray(), tempP.ToArray());
             dms.Add(first);
@@ -102,9 +102,9 @@ namespace Tax_Finance_Calculator
             tempR.Add(taxRates.Last().fourth_cutoff);
 
             tempP.Add(taxRates.Last().first_rate);
-            tempP.Add(taxRates.Last().second_cutoff);
-            tempP.Add(taxRates.Last().first_cutoff);
-            tempP.Add(taxRates.Last().third_cutoff);
+            tempP.Add(taxRates.Last().second_rate);
+            tempP.Add(taxRates.Last().third_rate);
+            tempP.Add(taxRates.Last().fourth_rate);
 
             var last = new DataModel(taxRates.Last().countryName.ToString(), tempR.ToArray(), tempP.ToArray());
             dms.Add(last);
@@ -124,16 +124,20 @@ namespace Tax_Finance_Calculator
             var selected = (DataModel)chooseCountry.SelectedItem;
 
             //new MessageDialog(selected.countryName.ToString()).ShowAsync();
-            if(selected.countryName.ToString() == "Ireland")
+            if (selected.countryName.ToString() == "Ireland")
             {
-                bvm.setCountry(selected.countryName.ToString());
-
+                bvm.setCountry(selected.countryName);
+                bvm.setRate(selected.percentages);
+                bvm.setCutoff(selected.taxRates);
+                bvm.test();
                 this.Frame.Navigate(typeof(EnterCredentials));
             }
-            else if(selected.countryName.ToString() == "The Netherland")
+
+            else if (selected.countryName.ToString() == "The Netherland")
             {
-                //Country(selected.countryName.ToString());
-                bvm.setCountry(selected.countryName.ToString());
+                bvm.setCountry(selected.countryName);
+                bvm.setRate(selected.percentages);
+                bvm.setCutoff(selected.taxRates);
 
                 this.Frame.Navigate(typeof(NoCredentialsNeeded));
 

@@ -16,23 +16,27 @@ namespace Tax_Finance_Calculator.ViewModel
         double calculatedTax;
         DataModel dm = new DataModel();
         string country;
+        double [] cutOffs;
+        double[] rates;
+
 
         public String setCountry(String country)
         {
             this.country = country;
-            switch (country)
-            {
-                case "Ireland":
-                    new MessageDialog(country).ShowAsync();
-                    break;
-            }
-
             return country;
 
         }
 
-        public void determineRate(double salary)
+        public double[] setRate(double[] rates)
         {
+            this.rates = rates;
+            return rates;
+        }
+
+        public double[] setCutoff(double[] cutOffs)
+        {
+            this.cutOffs = cutOffs;
+            return cutOffs;
 
         }
 
