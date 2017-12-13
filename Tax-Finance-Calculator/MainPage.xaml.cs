@@ -32,12 +32,12 @@ namespace Tax_Finance_Calculator
         private IMobileServiceTable<TaxRates> taxRatesTable = App.MobileService.GetTable<TaxRates>();
 
         List<DataModel> dms;
-
+        BracketViewModel bvm;
         public MainPage()
         {
             this.InitializeComponent();
             dms = new List<DataModel>();
-
+            bvm  = new BracketViewModel();
             init();
         }
 
@@ -126,16 +126,17 @@ namespace Tax_Finance_Calculator
             //new MessageDialog(selected.countryName.ToString()).ShowAsync();
             if(selected.countryName.ToString() == "Ireland")
             {
-                this.Frame.Navigate(typeof(EnterCredentials));
-                /*
-                foreach (var txt in dms)
-                {
+                bvm.setCountry(selected.countryName.ToString());
 
-                }*/
+                this.Frame.Navigate(typeof(EnterCredentials));
             }
             else if(selected.countryName.ToString() == "The Netherland")
             {
+                //Country(selected.countryName.ToString());
+                bvm.setCountry(selected.countryName.ToString());
+
                 this.Frame.Navigate(typeof(NoCredentialsNeeded));
+
             }
 
         }
