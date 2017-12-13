@@ -123,7 +123,6 @@ namespace Tax_Finance_Calculator
 
             var selected = (DataModel)chooseCountry.SelectedItem;
 
-            //new MessageDialog(selected.countryName.ToString()).ShowAsync();
             if (selected.countryName.ToString() == "Ireland")
             {
 
@@ -132,9 +131,6 @@ namespace Tax_Finance_Calculator
                 newRate.countryName = selected.countryName;
                 newRate.taxRates = selected.taxRates;
                 newRate.percentages = selected.percentages;
-
-               // bvm.setRate(selected.percentages);
-                //bvm.setCutoff(selected.taxRates);
                 this.Frame.Navigate(typeof(EnterCredentials), newRate);
             }
 

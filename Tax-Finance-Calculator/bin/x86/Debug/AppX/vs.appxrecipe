@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-13T18:45:29.976</Modified>
+      <Modified>2017-12-13T19:45:15.115</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Tax-Finance-Calculator.exe">
       <PackagePath>entrypoint\Tax-Finance-Calculator.exe</PackagePath>
-      <Modified>2017-12-13T18:45:29.160</Modified>
+      <Modified>2017-12-13T19:45:14.768</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dillo\.nuget\packages\Microsoft.Azure.Mobile.Client\4.0.2\lib\uap10.0\Microsoft.Azure.Mobile.Client.dll">
       <PackagePath>Microsoft.Azure.Mobile.Client.dll</PackagePath>
@@ -581,11 +581,11 @@
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-13T18:45:29.655</Modified>
+      <Modified>2017-12-13T19:44:24.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dillo\Desktop\Work\Tax-Finance-Calculator\Tax-Finance-Calculator\bin\x86\Debug\Core\Tax-Finance-Calculator.exe">
       <PackagePath>Tax-Finance-Calculator.exe</PackagePath>
-      <Modified>2017-12-13T18:45:29.955</Modified>
+      <Modified>2017-12-13T19:45:15.111</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -80,6 +80,33 @@ namespace Tax_Finance_Calculator.ViewModel
             }
         }
 
+        public void noCredentialsTax()
+        {
+            if(salary <= cutOffs[0])
+            {
+                taxedIncome = (salary / 100) * rates[0];
+                yearlyIncome = salary - taxedIncome;
+                rentAdvisor = (yearlyIncome / 100) * 30;
+                savingsAdvisor = (yearlyIncome / 100) * 10;
+
+            }
+
+            else if(salary > cutOffs[0] && salary < cutOffs[1])
+            {
+                    var under = (salary / 100) * rates[0];
+
+                    var over = salary - cutOffs[0];
+                    over = (salary / 100) * rates[1];
+
+                    taxedIncome = under + over;
+                    yearlyIncome = salary - taxedIncome;
+
+                    rentAdvisor = (yearlyIncome / 100) * 30;
+                    savingsAdvisor = (yearlyIncome / 100) * 10;
+
+            }
+        }
+
         public double taxedIncome
         {
             get { return This.taxedIncome; }
