@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Tax_Finance_Calculator.Model;
+using Tax_Finance_Calculator.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,19 +24,26 @@ namespace Tax_Finance_Calculator.View
     /// </summary>
     public sealed partial class EnterCredentials : Page
     {
+        BracketViewModel bvm;
+        string subSalary;
+
         public EnterCredentials()
         {
             this.InitializeComponent();
+            bvm = new BracketViewModel();
             init();
         }
 
+        int status;
 
         private void init()
         {
             salary.HorizontalAlignment = HorizontalAlignment.Center;
             salary.VerticalAlignment = VerticalAlignment.Center;
             salary.PlaceholderText = "Enter salary";
-            var subSalary = salary.Text;
+
+            confirm.HorizontalAlignment = HorizontalAlignment.Center;
+            confirm.VerticalAlignment = VerticalAlignment.Center;
 
             salary.IsReadOnly = true;
 
@@ -66,9 +75,22 @@ namespace Tax_Finance_Calculator.View
 
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var pars = (DataModel)e.Parameter;
+
+            bvm.cutOffs = pars.taxRates;
+            bvm.rates = pars.percentages;
+
+           // pars.percentages = bvm.cutOffs;
+        }
+
         private void Single_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;
+
+            status = 1;
             salary.IsReadOnly = false;
 
         }
@@ -76,6 +98,8 @@ namespace Tax_Finance_Calculator.View
         private void SP_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;
+
+            status = 2;
             salary.IsReadOnly = false;
 
         }
@@ -83,7 +107,22 @@ namespace Tax_Finance_Calculator.View
         private void Married_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;
+
+            status = 3;
             salary.IsReadOnly = false;
+        }
+
+        private void confirm_Click(object sender, RoutedEventArgs e)
+        {
+            bvm.salary = double.Parse(salary.Text);
+
+            bvm.determineRate(status);
+
+        }
+
+        private void salary_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

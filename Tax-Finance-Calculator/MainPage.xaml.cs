@@ -126,20 +126,26 @@ namespace Tax_Finance_Calculator
             //new MessageDialog(selected.countryName.ToString()).ShowAsync();
             if (selected.countryName.ToString() == "Ireland")
             {
-                bvm.setCountry(selected.countryName);
-                bvm.setRate(selected.percentages);
-                bvm.setCutoff(selected.taxRates);
-                bvm.test();
-                this.Frame.Navigate(typeof(EnterCredentials));
+
+                var newRate = new DataModel();
+
+                newRate.countryName = selected.countryName;
+                newRate.taxRates = selected.taxRates;
+                newRate.percentages = selected.percentages;
+
+               // bvm.setRate(selected.percentages);
+                //bvm.setCutoff(selected.taxRates);
+                this.Frame.Navigate(typeof(EnterCredentials), newRate);
             }
 
             else if (selected.countryName.ToString() == "The Netherland")
             {
-                bvm.setCountry(selected.countryName);
-                bvm.setRate(selected.percentages);
-                bvm.setCutoff(selected.taxRates);
+                var newRate = new DataModel();
 
-                this.Frame.Navigate(typeof(NoCredentialsNeeded));
+                newRate.countryName = selected.countryName;
+                newRate.taxRates = selected.taxRates;
+                newRate.percentages = selected.percentages;
+                this.Frame.Navigate(typeof(NoCredentialsNeeded), newRate);
 
             }
 
