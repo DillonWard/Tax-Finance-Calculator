@@ -101,6 +101,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\IncomeModel.cs" />
+    <Compile Include="Notification Base\Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BracketViewModel.cs" />
     <Compile Include="View\EnterCredentials.xaml.cs">

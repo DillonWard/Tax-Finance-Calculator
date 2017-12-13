@@ -58,6 +58,9 @@
       <RootProperty Name="Children" />
       <RootProperty Name="Name" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="InputScope" />
       <RootProperty Name="TextWrapping" />

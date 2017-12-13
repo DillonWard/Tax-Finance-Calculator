@@ -5,23 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tax_Finance_Calculator.Model;
+using Tax_Finance_Calculator.Notification_Base;
 using Windows.UI.Popups;
 
 namespace Tax_Finance_Calculator.ViewModel
 {
-    class BracketViewModel
+    class BracketViewModel : NotificationBase<IncomeModel>
     {
 
         // Deduct the tax from gross income
-        double calculatedTax;
-        IncomeModel im = new IncomeModel();
         DataModel dm = new DataModel();
         double currRate;
         double currPercent;
 
+
+
         public double salary { get; set;}
         public double[] cutOffs { get; set; }
         public double[] rates { get; set; }
+
+        public BracketViewModel(IncomeModel im = null) : base(im){
+
+        }
 
         public void determineRate(int r)
         {
@@ -39,29 +44,67 @@ namespace Tax_Finance_Calculator.ViewModel
                     break;
 
                 case 3:
-                    currRate = cutOffs[3];
-                    currPercent = rates[3];
+                    currRate = cutOffs[2];
+                    currPercent = rates[2];
                     break;
 
             }
-            deductTax(salary, currPercent);
+            deductTax(salary, currRate, currPercent);
         }
 
-        public void deductTax(double salary, double taxRate)
+
+
+        public void deductTax(double salary, double currentRate, double taxRate)
         {
-            calculatedTax = (salary / 100) * taxRate;
-            im.taxedIncome = calculatedTax;
-            calculatedTax = salary - calculatedTax;
-            im.yearlyIncome = calculatedTax;
+            if(salary > currentRate)
+            {
+                var under = (salary / 100) * taxRate;
 
+                var over = salary - currentRate;
+                over = (salary / 100) * rates[3];
 
+                taxedIncome = under + over;
+                yearlyIncome = salary - taxedIncome;
 
-            var ra = (im.yearlyIncome / 100) * 30;
-            im.rentAdvisor = ra;
+                rentAdvisor = (yearlyIncome / 100) * 30;
+                savingsAdvisor = (yearlyIncome / 100) * 10;
+            }
 
-            var sa = (calculatedTax / 100) * 10;
-            im.savingsAdvisor = sa;
+            else
+            {
+                taxedIncome = (salary / 100) * taxRate;
+                yearlyIncome = salary - taxedIncome;
+                rentAdvisor = (yearlyIncome / 100) * 30;
+                savingsAdvisor = (yearlyIncome / 100) * 10;
+
+            }
+        }
+
+        public double taxedIncome
+        {
+            get { return This.taxedIncome; }
+            set { SetProperty(This.taxedIncome, value, () => This.taxedIncome = value); }
+        }
+        public double yearlyIncome
+        {
+            get { return This.yearlyIncome; }
+            set { SetProperty(This.yearlyIncome, value, () => This.yearlyIncome = value); }
+
 
         }
+        public double rentAdvisor
+        {
+            get { return This.rentAdvisor; }
+            set { SetProperty(This.rentAdvisor, value, () => This.rentAdvisor = value); }
+
+
+        }
+        public double savingsAdvisor
+        {
+            get { return This.savingsAdvisor; }
+            set { SetProperty(This.savingsAdvisor, value, () => This.savingsAdvisor = value); }
+
+        }
+
     }
 }

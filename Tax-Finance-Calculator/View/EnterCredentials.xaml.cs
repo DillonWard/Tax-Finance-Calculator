@@ -7,6 +7,7 @@ using Tax_Finance_Calculator.Model;
 using Tax_Finance_Calculator.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,11 +26,12 @@ namespace Tax_Finance_Calculator.View
     public sealed partial class EnterCredentials : Page
     {
         BracketViewModel bvm;
-        string subSalary;
 
         public EnterCredentials()
         {
             this.InitializeComponent();
+            this.DataContextChanged += (s, e) => this.Bindings.Update();
+
             bvm = new BracketViewModel();
             init();
         }
@@ -62,15 +64,12 @@ namespace Tax_Finance_Calculator.View
             returns.HorizontalAlignment = HorizontalAlignment.Center;
 
             afterTaxResult.HorizontalAlignment = HorizontalAlignment.Right;
-            afterTaxResult.Text = "1";
 
             taxedIncomeResult.HorizontalAlignment = HorizontalAlignment.Right;
 
             suggestedSavingsResult.HorizontalAlignment = HorizontalAlignment.Right;
 
             suggestedRentResult.HorizontalAlignment = HorizontalAlignment.Right;
-
-            afterTaxResult.HorizontalAlignment = HorizontalAlignment.Right;
 
 
         }
@@ -83,7 +82,6 @@ namespace Tax_Finance_Calculator.View
             bvm.cutOffs = pars.taxRates;
             bvm.rates = pars.percentages;
 
-           // pars.percentages = bvm.cutOffs;
         }
 
         private void Single_Checked(object sender, RoutedEventArgs e)
